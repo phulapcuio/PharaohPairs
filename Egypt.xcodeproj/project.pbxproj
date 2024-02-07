@@ -10,7 +10,6 @@
 		188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960952B73A2A20001BCB7 /* AppDelegate.swift */; };
 		188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960972B73A2A20001BCB7 /* SceneDelegate.swift */; };
 		1889609D2B73A2A20001BCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1889609B2B73A2A20001BCB7 /* Main.storyboard */; };
-		1889609F2B73A2A40001BCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1889609E2B73A2A40001BCB7 /* Assets.xcassets */; };
 		188960A22B73A2A40001BCB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188960A02B73A2A40001BCB7 /* LaunchScreen.storyboard */; };
 		188960AF2B73B4C00001BCB7 /* UserMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960AE2B73B4C00001BCB7 /* UserMemory.swift */; };
 		188960B12B73B5CC0001BCB7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960B02B73B5CC0001BCB7 /* Settings.swift */; };
@@ -37,6 +36,7 @@
 		188960E92B73C4520001BCB7 /* BlackHanSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188960E82B73C4520001BCB7 /* BlackHanSans-Regular.ttf */; };
 		188960F02B73CB020001BCB7 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188960EE2B73CB010001BCB7 /* Montserrat-Black.ttf */; };
 		188960F12B73CB020001BCB7 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188960EF2B73CB020001BCB7 /* Montserrat-Medium.ttf */; };
+		188960F32B73F8A80001BCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188960F22B73F8A80001BCB7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,6 @@
 		188960952B73A2A20001BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188960972B73A2A20001BCB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1889609C2B73A2A20001BCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1889609E2B73A2A40001BCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188960A12B73A2A40001BCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		188960A32B73A2A40001BCB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188960AE2B73B4C00001BCB7 /* UserMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMemory.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		188960E82B73C4520001BCB7 /* BlackHanSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BlackHanSans-Regular.ttf"; sourceTree = "<group>"; };
 		188960EE2B73CB010001BCB7 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		188960EF2B73CB020001BCB7 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		188960F22B73F8A80001BCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				188960E72B73C4430001BCB7 /* UIFont */,
-				1889609E2B73A2A40001BCB7 /* Assets.xcassets */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				188960B32B73B6050001BCB7 /* Font + Extension.swift */,
+				188960F22B73F8A80001BCB7 /* Assets.xcassets */,
 			);
 			path = Assistants;
 			sourceTree = "<group>";
@@ -333,8 +333,8 @@
 				188960E92B73C4520001BCB7 /* BlackHanSans-Regular.ttf in Resources */,
 				188960F02B73CB020001BCB7 /* Montserrat-Black.ttf in Resources */,
 				188960A22B73A2A40001BCB7 /* LaunchScreen.storyboard in Resources */,
-				1889609F2B73A2A40001BCB7 /* Assets.xcassets in Resources */,
 				188960F12B73CB020001BCB7 /* Montserrat-Medium.ttf in Resources */,
+				188960F32B73F8A80001BCB7 /* Assets.xcassets in Resources */,
 				1889609D2B73A2A20001BCB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

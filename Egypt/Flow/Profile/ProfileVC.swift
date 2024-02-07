@@ -26,12 +26,18 @@ class ProfileVC: UIViewController {
     private func tappedButtons() {
         contentView.homeButtons.addTarget(self, action: #selector(goButtonTappedHome), for: .touchUpInside)
         contentView.profileBtn.addTarget(self, action: #selector(goTakePhoto), for: .touchUpInside)
+        contentView.infoButtons.addTarget(self, action: #selector(goButtonTappedInfo), for: .touchUpInside)
     }
     
     @objc func goButtonTappedHome() {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func goButtonTappedInfo() {
+        let infoVC = InfoVC()
+        navigationController?.pushViewController(infoVC, animated: true)
+    }
+
 
     @objc func goTakePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
