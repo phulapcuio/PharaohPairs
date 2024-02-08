@@ -27,6 +27,7 @@ class ProfileVC: UIViewController {
         contentView.homeButtons.addTarget(self, action: #selector(goButtonTappedHome), for: .touchUpInside)
         contentView.profileBtn.addTarget(self, action: #selector(goTakePhoto), for: .touchUpInside)
         contentView.infoButtons.addTarget(self, action: #selector(goButtonTappedInfo), for: .touchUpInside)
+        contentView.setupButtons.addTarget(self, action: #selector(goButtonTappedSetup), for: .touchUpInside)
     }
     
     @objc func goButtonTappedHome() {
@@ -37,6 +38,12 @@ class ProfileVC: UIViewController {
         let infoVC = InfoVC()
         navigationController?.pushViewController(infoVC, animated: true)
     }
+    
+    @objc func goButtonTappedSetup() {
+        let setupVC = SetupVC()
+        navigationController?.pushViewController(setupVC, animated: true)
+    }
+
 
 
     @objc func goTakePhoto() {

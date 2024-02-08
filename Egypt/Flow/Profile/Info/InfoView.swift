@@ -145,12 +145,12 @@ class InfoView: UIView {
         
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(subTitleLabel.snp.bottom).offset(32)
-            make.left.right.equalToSuperview().inset(24)
+            make.left.right.equalToSuperview()
         }
         
         bottomConImage.snp.makeConstraints { make in
-            make.top.equalTo(contentLabel.snp.bottom).offset(32)
-            make.left.right.equalToSuperview().inset(24)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
+            make.left.right.equalToSuperview()
         }
 
     }

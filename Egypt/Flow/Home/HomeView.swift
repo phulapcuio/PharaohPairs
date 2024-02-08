@@ -30,34 +30,40 @@ class HomeView: UIView {
 
     private(set) lazy var playButtons: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .customBrown
+        button.setBackgroundImage(UIImage(color:.customBrown), for: .normal)
+        button.setBackgroundImage(UIImage(color: UIColor.customOrange), for: .highlighted)
         button.setTitle("Play".uppercased(), for: .normal)
         button.titleLabel?.font = UIFont.customFont(font: .montserrat, style: .medium, size: 20)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.customOrange.cgColor
+        button.clipsToBounds = true
         return button
     }()
     
     private(set) lazy var getBonusButtons: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .customBrown
+        button.setBackgroundImage(UIImage(color:.customBrown), for: .normal)
+        button.setBackgroundImage(UIImage(color: UIColor.customOrange), for: .highlighted)
         button.setTitle("Get Bonus".uppercased(), for: .normal)
         button.titleLabel?.font = UIFont.customFont(font: .montserrat, style: .medium, size: 20)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.customOrange.cgColor
+        button.clipsToBounds = true
         return button
     }()
     
     private(set) lazy var leadButtons: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .customBrown
+        button.setBackgroundImage(UIImage(color:.customBrown), for: .normal)
+        button.setBackgroundImage(UIImage(color: UIColor.customOrange), for: .highlighted)
         button.setTitle("leaderboard".uppercased(), for: .normal)
         button.titleLabel?.font = UIFont.customFont(font: .montserrat, style: .medium, size: 20)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.customOrange.cgColor
+        button.clipsToBounds = true
         return button
     }()
 
@@ -126,5 +132,17 @@ class HomeView: UIView {
             make.left.right.equalToSuperview().inset(24)
             make.top.equalTo(leadButtons.snp.bottom).offset(74)
         }
+    }
+}
+
+extension UIImage {
+    convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.init(cgImage: image.cgImage!)
     }
 }

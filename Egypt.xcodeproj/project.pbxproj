@@ -37,6 +37,9 @@
 		188960F02B73CB020001BCB7 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188960EE2B73CB010001BCB7 /* Montserrat-Black.ttf */; };
 		188960F12B73CB020001BCB7 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188960EF2B73CB020001BCB7 /* Montserrat-Medium.ttf */; };
 		188960F32B73F8A80001BCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188960F22B73F8A80001BCB7 /* Assets.xcassets */; };
+		188960F62B7503250001BCB7 /* GetBonusPrizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F52B7503250001BCB7 /* GetBonusPrizVC.swift */; };
+		188960F82B75032B0001BCB7 /* GetBonusPrizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F72B75032B0001BCB7 /* GetBonusPrizView.swift */; };
+		188960FA2B7503520001BCB7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F92B7503520001BCB7 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		188960EE2B73CB010001BCB7 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		188960EF2B73CB020001BCB7 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		188960F22B73F8A80001BCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		188960F52B7503250001BCB7 /* GetBonusPrizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusPrizVC.swift; sourceTree = "<group>"; };
+		188960F72B75032B0001BCB7 /* GetBonusPrizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusPrizView.swift; sourceTree = "<group>"; };
+		188960F92B7503520001BCB7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,8 @@
 			children = (
 				188960CE2B73B9520001BCB7 /* GetBonusVC.swift */,
 				188960D02B73B9570001BCB7 /* GetBonusView.swift */,
+				188960F92B7503520001BCB7 /* CircleView.swift */,
+				188960F42B7503120001BCB7 /* GetBonusPriz */,
 			);
 			path = GetBonus;
 			sourceTree = "<group>";
@@ -264,6 +272,15 @@
 				188960E82B73C4520001BCB7 /* BlackHanSans-Regular.ttf */,
 			);
 			path = UIFont;
+			sourceTree = "<group>";
+		};
+		188960F42B7503120001BCB7 /* GetBonusPriz */ = {
+			isa = PBXGroup;
+			children = (
+				188960F52B7503250001BCB7 /* GetBonusPrizVC.swift */,
+				188960F72B75032B0001BCB7 /* GetBonusPrizView.swift */,
+			);
+			path = GetBonusPriz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +367,13 @@
 				188960C72B73B9300001BCB7 /* GameOverVC.swift in Sources */,
 				188960CD2B73B9430001BCB7 /* CongratilationsView.swift in Sources */,
 				188960CF2B73B9520001BCB7 /* GetBonusVC.swift in Sources */,
+				188960F62B7503250001BCB7 /* GetBonusPrizVC.swift in Sources */,
 				188960E12B73B99C0001BCB7 /* InfoVC.swift in Sources */,
 				188960C92B73B9360001BCB7 /* GameOverView.swift in Sources */,
 				188960B12B73B5CC0001BCB7 /* Settings.swift in Sources */,
+				188960FA2B7503520001BCB7 /* CircleView.swift in Sources */,
 				188960DD2B73B9910001BCB7 /* SetupVC.swift in Sources */,
+				188960F82B75032B0001BCB7 /* GetBonusPrizView.swift in Sources */,
 				188960BF2B73B8C40001BCB7 /* HomeVC.swift in Sources */,
 				188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */,
 				188960D72B73B9720001BCB7 /* LeaderboardView.swift in Sources */,
