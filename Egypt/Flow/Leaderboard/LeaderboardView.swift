@@ -43,9 +43,9 @@ class LeaderboardView: UIView {
         }
         
         homeBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(34)
             make.left.equalToSuperview().offset(24)
-            make.top.equalToSuperview().offset(56)
-            make.size.equalTo(40)
-        }        
+            make.size.equalTo(48)
+        }
     }
 }

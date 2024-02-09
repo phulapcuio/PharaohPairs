@@ -35,6 +35,8 @@ class HomeVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.contentView.playButtons.layer.borderColor = UIColor.customOrange.cgColor
            }
+        let playVC = PlayVC()
+        navigationController?.pushViewController(playVC, animated: true)
     }
     
     @objc func buttonTappedPlayReleased() {

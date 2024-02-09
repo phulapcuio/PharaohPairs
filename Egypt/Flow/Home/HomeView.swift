@@ -97,13 +97,14 @@ class HomeView: UIView {
         }
         
         profileButtons.snp.makeConstraints { (make) in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(34)
             make.right.equalToSuperview().offset(-24)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
+            make.size.equalTo(48)
         }
 
         topImage.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(24)
-            make.top.equalTo(profileButtons.snp.bottom).offset(74)
+            make.top.equalTo(profileButtons.snp.bottom).offset(56)
         }
 
         playButtons.snp.makeConstraints { (make) in

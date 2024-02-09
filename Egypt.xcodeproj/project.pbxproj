@@ -40,6 +40,8 @@
 		188960F62B7503250001BCB7 /* GetBonusPrizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F52B7503250001BCB7 /* GetBonusPrizVC.swift */; };
 		188960F82B75032B0001BCB7 /* GetBonusPrizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F72B75032B0001BCB7 /* GetBonusPrizView.swift */; };
 		188960FA2B7503520001BCB7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960F92B7503520001BCB7 /* CircleView.swift */; };
+		188960FD2B76285E0001BCB7 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960FC2B76285E0001BCB7 /* LoadingVC.swift */; };
+		188960FF2B7628650001BCB7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960FE2B7628650001BCB7 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		188960F52B7503250001BCB7 /* GetBonusPrizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusPrizVC.swift; sourceTree = "<group>"; };
 		188960F72B75032B0001BCB7 /* GetBonusPrizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusPrizView.swift; sourceTree = "<group>"; };
 		188960F92B7503520001BCB7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		188960FC2B76285E0001BCB7 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		188960FE2B7628650001BCB7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		188960AB2B73B4520001BCB7 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				188960FB2B7628260001BCB7 /* Loading */,
 				188960B52B73B6FB0001BCB7 /* Home */,
 				188960B82B73B7400001BCB7 /* Play */,
 				188960B72B73B72E0001BCB7 /* GetBonus */,
@@ -283,6 +288,15 @@
 			path = GetBonusPriz;
 			sourceTree = "<group>";
 		};
+		188960FB2B7628260001BCB7 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				188960FC2B76285E0001BCB7 /* LoadingVC.swift */,
+				188960FE2B7628650001BCB7 /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,8 +379,10 @@
 			files = (
 				188960CB2B73B93D0001BCB7 /* CongratilationsVC.swift in Sources */,
 				188960C72B73B9300001BCB7 /* GameOverVC.swift in Sources */,
+				188960FD2B76285E0001BCB7 /* LoadingVC.swift in Sources */,
 				188960CD2B73B9430001BCB7 /* CongratilationsView.swift in Sources */,
 				188960CF2B73B9520001BCB7 /* GetBonusVC.swift in Sources */,
+				188960FF2B7628650001BCB7 /* LoadingView.swift in Sources */,
 				188960F62B7503250001BCB7 /* GetBonusPrizVC.swift in Sources */,
 				188960E12B73B99C0001BCB7 /* InfoVC.swift in Sources */,
 				188960C92B73B9360001BCB7 /* GameOverView.swift in Sources */,
