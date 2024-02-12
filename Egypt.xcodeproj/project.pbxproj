@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1814C3B62B7A84010001103E /* LeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3B52B7A84010001103E /* LeadCell.swift */; };
+		1814C3B82B7A841F0001103E /* ModelLead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3B72B7A841F0001103E /* ModelLead.swift */; };
+		1814C3BB2B7A87D80001103E /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BA2B7A87D80001103E /* AuthTokenService.swift */; };
+		1814C3BD2B7A87FE0001103E /* LeadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BC2B7A87FE0001103E /* LeadService.swift */; };
+		1814C3BF2B7A89280001103E /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BE2B7A89280001103E /* PostService.swift */; };
+		1814C3C12B7A89470001103E /* UpdatePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3C02B7A89470001103E /* UpdatePayload.swift */; };
+		1814C3C32B7A895F0001103E /* CreateRequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */; };
 		188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960952B73A2A20001BCB7 /* AppDelegate.swift */; };
 		188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960972B73A2A20001BCB7 /* SceneDelegate.swift */; };
 		1889609D2B73A2A20001BCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1889609B2B73A2A20001BCB7 /* Main.storyboard */; };
@@ -25,7 +32,7 @@
 		188960CF2B73B9520001BCB7 /* GetBonusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960CE2B73B9520001BCB7 /* GetBonusVC.swift */; };
 		188960D12B73B9570001BCB7 /* GetBonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960D02B73B9570001BCB7 /* GetBonusView.swift */; };
 		188960D52B73B96D0001BCB7 /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960D42B73B96D0001BCB7 /* LeaderboardVC.swift */; };
-		188960D72B73B9720001BCB7 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960D62B73B9720001BCB7 /* LeaderboardView.swift */; };
+		188960D72B73B9720001BCB7 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960D62B73B9720001BCB7 /* LeaderBoardView.swift */; };
 		188960D92B73B97D0001BCB7 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960D82B73B97D0001BCB7 /* ProfileVC.swift */; };
 		188960DB2B73B9840001BCB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960DA2B73B9840001BCB7 /* ProfileView.swift */; };
 		188960DD2B73B9910001BCB7 /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960DC2B73B9910001BCB7 /* SetupVC.swift */; };
@@ -45,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1814C3B52B7A84010001103E /* LeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadCell.swift; sourceTree = "<group>"; };
+		1814C3B72B7A841F0001103E /* ModelLead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLead.swift; sourceTree = "<group>"; };
+		1814C3BA2B7A87D80001103E /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
+		1814C3BC2B7A87FE0001103E /* LeadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadService.swift; sourceTree = "<group>"; };
+		1814C3BE2B7A89280001103E /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		1814C3C02B7A89470001103E /* UpdatePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePayload.swift; sourceTree = "<group>"; };
+		1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestPayload.swift; sourceTree = "<group>"; };
 		188960922B73A2A20001BCB7 /* Egypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188960952B73A2A20001BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188960972B73A2A20001BCB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +79,7 @@
 		188960CE2B73B9520001BCB7 /* GetBonusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusVC.swift; sourceTree = "<group>"; };
 		188960D02B73B9570001BCB7 /* GetBonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBonusView.swift; sourceTree = "<group>"; };
 		188960D42B73B96D0001BCB7 /* LeaderboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
-		188960D62B73B9720001BCB7 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		188960D62B73B9720001BCB7 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		188960D82B73B97D0001BCB7 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		188960DA2B73B9840001BCB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		188960DC2B73B9910001BCB7 /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
@@ -95,6 +109,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1814C3B92B7A87C10001103E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1814C3BA2B7A87D80001103E /* AuthTokenService.swift */,
+				1814C3BC2B7A87FE0001103E /* LeadService.swift */,
+				1814C3BE2B7A89280001103E /* PostService.swift */,
+				1814C3C02B7A89470001103E /* UpdatePayload.swift */,
+				1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		188960892B73A2A20001BCB7 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				188960B02B73B5CC0001BCB7 /* Settings.swift */,
+				1814C3B92B7A87C10001103E /* Service */,
 				188960B22B73B5DD0001BCB7 /* Assistants */,
 			);
 			path = Settings;
@@ -195,7 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				188960D42B73B96D0001BCB7 /* LeaderboardVC.swift */,
-				188960D62B73B9720001BCB7 /* LeaderboardView.swift */,
+				188960D62B73B9720001BCB7 /* LeaderBoardView.swift */,
+				1814C3B52B7A84010001103E /* LeadCell.swift */,
+				1814C3B72B7A841F0001103E /* ModelLead.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -377,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1814C3BB2B7A87D80001103E /* AuthTokenService.swift in Sources */,
 				188960CB2B73B93D0001BCB7 /* CongratilationsVC.swift in Sources */,
 				188960C72B73B9300001BCB7 /* GameOverVC.swift in Sources */,
 				188960FD2B76285E0001BCB7 /* LoadingVC.swift in Sources */,
@@ -384,6 +414,7 @@
 				188960CF2B73B9520001BCB7 /* GetBonusVC.swift in Sources */,
 				188960FF2B7628650001BCB7 /* LoadingView.swift in Sources */,
 				188960F62B7503250001BCB7 /* GetBonusPrizVC.swift in Sources */,
+				1814C3B82B7A841F0001103E /* ModelLead.swift in Sources */,
 				188960E12B73B99C0001BCB7 /* InfoVC.swift in Sources */,
 				188960C92B73B9360001BCB7 /* GameOverView.swift in Sources */,
 				188960B12B73B5CC0001BCB7 /* Settings.swift in Sources */,
@@ -391,11 +422,15 @@
 				188960DD2B73B9910001BCB7 /* SetupVC.swift in Sources */,
 				188960F82B75032B0001BCB7 /* GetBonusPrizView.swift in Sources */,
 				188960BF2B73B8C40001BCB7 /* HomeVC.swift in Sources */,
+				1814C3C32B7A895F0001103E /* CreateRequestPayload.swift in Sources */,
+				1814C3BF2B7A89280001103E /* PostService.swift in Sources */,
 				188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */,
-				188960D72B73B9720001BCB7 /* LeaderboardView.swift in Sources */,
+				188960D72B73B9720001BCB7 /* LeaderBoardView.swift in Sources */,
 				188960DF2B73B9960001BCB7 /* SetupView.swift in Sources */,
+				1814C3BD2B7A87FE0001103E /* LeadService.swift in Sources */,
 				188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */,
 				188960BD2B73B8BF0001BCB7 /* HomeView.swift in Sources */,
+				1814C3C12B7A89470001103E /* UpdatePayload.swift in Sources */,
 				188960B42B73B6050001BCB7 /* Font + Extension.swift in Sources */,
 				188960E32B73B9A30001BCB7 /* InfoView.swift in Sources */,
 				188960D92B73B97D0001BCB7 /* ProfileVC.swift in Sources */,
@@ -403,6 +438,7 @@
 				188960D52B73B96D0001BCB7 /* LeaderboardVC.swift in Sources */,
 				188960C32B73B9110001BCB7 /* PlayVC.swift in Sources */,
 				188960DB2B73B9840001BCB7 /* ProfileView.swift in Sources */,
+				1814C3B62B7A84010001103E /* LeadCell.swift in Sources */,
 				188960AF2B73B4C00001BCB7 /* UserMemory.swift in Sources */,
 				188960D12B73B9570001BCB7 /* GetBonusView.swift in Sources */,
 			);
