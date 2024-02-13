@@ -12,18 +12,17 @@ class PostService {
     
     static let shared = PostService()
     private init() {}
-    
-    private let baseUrl = "https://bonzala.space"
+    private let baseUrl = "https://go.aviator-club.space/users"
     
     func updateData(id: Int, payload: UpdatePayload, completion: @escaping (Result<CreateResponse, Error>) -> Void) {
         
-        guard let url = URL(string: baseUrl + "/api/players/\(id)") else {
+        guard let url = URL(string: baseUrl + "/update-balance/players/\(id)/\(UserMemory.shared.scoreCoints)") else {
             completion(.failure(LeadServiceError.unkonwn))
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "PATCH"
+        request.httpMethod = "POST"
         
         let json = try? JSONEncoder().encode(payload)
         request.httpBody = json
@@ -49,7 +48,7 @@ class PostService {
     
     func createUser(payload: CreateRequestPayload, successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
         
-        guard let url = URL(string: baseUrl + "/api/players/") else {
+        guard let url = URL(string: baseUrl + "/create-user") else {
             print("Неверный URL")
             DispatchQueue.main.async {
                 errorCompletion(LeadServiceError.unkonwn)

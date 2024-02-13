@@ -12,7 +12,6 @@
 		1814C3BB2B7A87D80001103E /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BA2B7A87D80001103E /* AuthTokenService.swift */; };
 		1814C3BD2B7A87FE0001103E /* LeadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BC2B7A87FE0001103E /* LeadService.swift */; };
 		1814C3BF2B7A89280001103E /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BE2B7A89280001103E /* PostService.swift */; };
-		1814C3C12B7A89470001103E /* UpdatePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3C02B7A89470001103E /* UpdatePayload.swift */; };
 		1814C3C32B7A895F0001103E /* CreateRequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */; };
 		188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960952B73A2A20001BCB7 /* AppDelegate.swift */; };
 		188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188960972B73A2A20001BCB7 /* SceneDelegate.swift */; };
@@ -57,7 +56,6 @@
 		1814C3BA2B7A87D80001103E /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
 		1814C3BC2B7A87FE0001103E /* LeadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadService.swift; sourceTree = "<group>"; };
 		1814C3BE2B7A89280001103E /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		1814C3C02B7A89470001103E /* UpdatePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePayload.swift; sourceTree = "<group>"; };
 		1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestPayload.swift; sourceTree = "<group>"; };
 		188960922B73A2A20001BCB7 /* Egypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188960952B73A2A20001BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				1814C3BA2B7A87D80001103E /* AuthTokenService.swift */,
 				1814C3BC2B7A87FE0001103E /* LeadService.swift */,
 				1814C3BE2B7A89280001103E /* PostService.swift */,
-				1814C3C02B7A89470001103E /* UpdatePayload.swift */,
 				1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */,
 			);
 			path = Service;
@@ -430,7 +427,6 @@
 				1814C3BD2B7A87FE0001103E /* LeadService.swift in Sources */,
 				188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */,
 				188960BD2B73B8BF0001BCB7 /* HomeView.swift in Sources */,
-				1814C3C12B7A89470001103E /* UpdatePayload.swift in Sources */,
 				188960B42B73B6050001BCB7 /* Font + Extension.swift in Sources */,
 				188960E32B73B9A30001BCB7 /* InfoView.swift in Sources */,
 				188960D92B73B97D0001BCB7 /* ProfileVC.swift in Sources */,

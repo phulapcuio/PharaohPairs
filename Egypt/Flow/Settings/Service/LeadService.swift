@@ -15,9 +15,9 @@ class LeadService {
     static let shared = LeadService()
     private init() {}
     
-    private let urlString = "https://bonzala.space/api/players"
+    private let urlString = "https://go.aviator-club.space/users/leaderboard"
 
-    func fetchData(successCompletion: @escaping([ModelLead]) -> Void, errorCompletion: @escaping (Error) -> Void) {
+    func fetchData(successCompletion: @escaping(ModelLead) -> Void, errorCompletion: @escaping (Error) -> Void) {
 
         guard let url = URL(string: urlString) else {
             print("Неверный URL")
@@ -45,16 +45,19 @@ class LeadService {
                 }
                 return
             }
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print(jsonString)
+            }
             
             do {
                 let decoder = JSONDecoder()
-                let leadModel = try decoder.decode([ModelLead].self, from: data)
+                let leadModel = try decoder.decode(ModelLead.self, from: data)
                 DispatchQueue.main.async {
                     successCompletion(leadModel)
                     print("\(leadModel)")
                 }
             }catch {
-                print("error", error)
+                print("error - ", error)
                 
                 DispatchQueue.main.async {
                     errorCompletion(error)

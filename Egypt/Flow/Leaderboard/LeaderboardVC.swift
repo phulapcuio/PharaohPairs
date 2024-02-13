@@ -9,7 +9,7 @@ import UIKit
 
 class LeaderboardVC: UIViewController {
     
-    private var leads = [ModelLead]()
+    private var leads = [Datum]()
     private let getLeadService = LeadService.shared
     private var contentView: LeaderBoardView {
         view as? LeaderBoardView ?? LeaderBoardView()
@@ -21,12 +21,17 @@ class LeaderboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.leaderBoardTableView.dataSource = self
-        contentView.leaderBoardTableView.delegate = self
+        setupLeadTableVIew()
         tappedButtons()
-        loadUsers()
+        loadLeads()
     }
     
+    
+    private func setupLeadTableVIew() {
+        contentView.leaderBoardTableView.dataSource = self
+        contentView.leaderBoardTableView.delegate = self
+
+    }
     
     private func tappedButtons() {
         contentView.homeButtons.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
@@ -35,24 +40,23 @@ class LeaderboardVC: UIViewController {
     @objc func buttonTapped() {
         navigationController?.popToRootViewController(animated: true)
     }
-    
-    func sorterScoreUsers() {
-        leads.sort {
-            $1.score < $0.score
-        }
-    }
 
-    func loadUsers() {
+    func loadLeads() {
         getLeadService.fetchData { [weak self] leads in
             guard let self = self else { return }
-            self.leads = leads
+            self.leads = leads.data
             self.contentView.leaderBoardTableView.reloadData()
-            self.sorterScoreUsers()
         } errorCompletion: { [weak self] error in
             guard self != nil else { return }
             
             }
         }
+    
+//    func sorterScoreLeads() {
+//        leads.sort {
+//            $1.data[0].balance < $0.data[0].balance
+//        }
+//    }
 }
 
 extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
@@ -77,11 +81,13 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
         return leaderBoardCell
     }
     
-    func setupCell(leadCell: LeadCell, user: ModelLead) {
+    func setupCell(leadCell: LeadCell, user: Datum) {
         
-        leadCell.cointslabel.text = String(user.score)
-        leadCell.userNameLabel.text = user.name == nil ? "USER# \(user.id ?? 0)" : user.name
-        
+//        let data = user.data[0] // Извлекаем первый элемент массива data
+
+        leadCell.cointslabel.text = "\(user.balance)"
+        leadCell.userNameLabel.text = "USER# \(user.userID)"
+
     }
     
 }

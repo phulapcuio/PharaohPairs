@@ -3,7 +3,6 @@
 //  Egypt
 
 
-
 import Foundation
 
 struct CreateRequestPayload: Encodable {
@@ -28,3 +27,8 @@ struct CreateResponse: Decodable {
     
 }
 
+struct UpdatePayload: Encodable {
+    
+    let name: String?
+    let score: Int?
+}

@@ -41,7 +41,7 @@ class SetupView: UIView {
         switchView.thumbTintColor = .cyan
         switchView.layer.borderWidth = 2
         switchView.layer.borderColor = UIColor.customOrange.cgColor
-        switchView.layer.cornerRadius = 15
+        switchView.layer.cornerRadius = 16
         return switchView
     }()
 
@@ -66,7 +66,7 @@ class SetupView: UIView {
         switchView.thumbTintColor = .cyan
         switchView.layer.borderWidth = 2
         switchView.layer.borderColor = UIColor.customOrange.cgColor
-        switchView.layer.cornerRadius = 15
+        switchView.layer.cornerRadius = 16
 
         return switchView
     }()

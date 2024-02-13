@@ -21,10 +21,10 @@ class LeaderBoardView: UIView {
     
     private(set) var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Leaders"
+        label.text = "Leaders".uppercased()
         label.textAlignment = .center
         label.font = .customFont(font: .montserrat, style: .black, size: 24)
-        label.textColor = .yellow
+        label.textColor = .gray
         label.numberOfLines = 0
         return label
     }()

@@ -10,13 +10,6 @@ class LeadCell: UITableViewCell {
     
     static let reuseId = String(describing: LeadCell.self)
     
-    private lazy var backImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .backHome
-        return imageView
-    }()
-    
-    
     private(set) lazy var userNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.customFont(font: .montserrat, style: .medium, size: 20)
@@ -27,13 +20,16 @@ class LeadCell: UITableViewCell {
     private(set) lazy var cointslabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.customFont(font: .blackHanSans, style: .regular, size: 20)
-        label.textColor = .yellow
+        label.textColor = .customYellow
         return label
     }()
     
     private(set) lazy var leadView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor.customYellow.cgColor
+        view.backgroundColor = .white.withAlphaComponent(0.07)
         return view
     }()
 
@@ -46,11 +42,12 @@ class LeadCell: UITableViewCell {
     }
     
         func setupUI() {
+            backgroundColor = .clear
             contentView.addSubview(leadView)
             contentView.backgroundColor = .clear
-            contentView.layer.cornerRadius = 8
-            
-            [backImage,cointslabel,userNameLabel] .forEach(leadView.addSubview(_:))
+            selectionStyle = .none
+
+            [cointslabel,userNameLabel] .forEach(leadView.addSubview(_:))
 
         }
         
@@ -70,20 +67,19 @@ class LeadCell: UITableViewCell {
         leadView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(20)
             make.left.right.bottom.equalToSuperview()
-            make.size.equalTo(150)
-        }
-
-        backImage.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.height.equalTo(48)
+            make.width.equalTo(345)
         }
         
         cointslabel.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview().offset(-4)
+            make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(32)
         }
         
         userNameLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview().offset(-4)
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-32)
+
         }
     }
 }
