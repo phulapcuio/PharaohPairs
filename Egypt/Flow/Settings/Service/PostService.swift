@@ -46,7 +46,7 @@ class PostService {
         }.resume()
     }
     
-    func createUser(payload: CreateRequestPayload, successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
+    func createUser(successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
         
         guard let url = URL(string: baseUrl + "/create-user") else {
             print("Неверный URL")
@@ -58,8 +58,6 @@ class PostService {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        let postString = payload.makeBody()
-        request.httpBody = postString.data(using: .utf8)
         
         guard let token = AuthTokenService.shared.token else { return }
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
