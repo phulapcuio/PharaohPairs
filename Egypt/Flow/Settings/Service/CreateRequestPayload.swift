@@ -17,7 +17,10 @@ struct CreateResponseData: Decodable {
 
 
 struct UpdatePayload: Encodable {
-    
-    let name: String?
-    let score: Int?
+    let data: UpdatePayloadData
+}
+
+struct UpdatePayloadData: Encodable {
+    let userId: Int
+    let balance: Int
 }

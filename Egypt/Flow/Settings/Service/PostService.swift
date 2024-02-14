@@ -14,9 +14,9 @@ class PostService {
     private init() {}
     private let baseUrl = "https://go.aviator-club.space/users"
     
-    func updateData(id: Int, payload: UpdatePayload, completion: @escaping (Result<CreateResponse, Error>) -> Void) {
+    func updateData(completion: @escaping (Result<CreateResponse, Error>) -> Void) {
         
-        guard let url = URL(string: baseUrl + "/update-balance/players/\(id)/\(UserMemory.shared.scoreCoints)") else {
+        guard let url = URL(string: baseUrl + "/update-balance/players/\(UserMemory.shared.userID!)/\(UserMemory.shared.scoreCoints)") else {
             completion(.failure(LeadServiceError.unkonwn))
             return
         }
@@ -24,8 +24,6 @@ class PostService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        let json = try? JSONEncoder().encode(payload)
-        request.httpBody = json
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         guard let token = AuthTokenService.shared.token else { return }
