@@ -16,7 +16,7 @@ class PostService {
     
     func updateData(completion: @escaping (Result<CreateResponse, Error>) -> Void) {
         
-        guard let url = URL(string: baseUrl + "/update-balance/players/\(UserMemory.shared.userID!)/\(UserMemory.shared.scoreCoints)") else {
+        guard let url = URL(string: baseUrl + "/update-balance/\(UserMemory.shared.userID!)/\(UserMemory.shared.scoreCoints)") else {
             completion(.failure(LeadServiceError.unkonwn))
             return
         }

@@ -10,9 +10,8 @@ struct CreateResponse: Decodable {
 }
 
 struct CreateResponseData: Decodable {
-    let userId: Int
-    let balance: Int
-    let imageUrl: String
+    let userId: String
+    let balance: String
 }
 
 
