@@ -7,7 +7,7 @@ import UIKit
 class ProfileVC: UIViewController {
     
     private let imagePicker = UIImagePickerController()
-    
+    private let postService = PostService.shared
     
     private var contentView: ProfileView {
         view as? ProfileView ?? ProfileView()
@@ -32,6 +32,7 @@ class ProfileVC: UIViewController {
     
     @objc func goButtonTappedHome() {
         navigationController?.popViewController(animated: true)
+        updateName()
     }
     
     @objc func goButtonTappedInfo() {
@@ -44,7 +45,18 @@ class ProfileVC: UIViewController {
         navigationController?.pushViewController(setupVC, animated: true)
     }
 
-
+    private func updateName() {
+        if UserMemory.shared.userName != nil {
+            PostService.shared.updateUserName(userName: UserMemory.shared.userName!) { result in
+                switch result {
+                case .success(let response):
+                    print("Успешно обновлено:", response)
+                case .failure(let error):
+                    print("Ошибка при обновлении имени пользователя:", error)
+                }
+            }
+        }
+    }
 
     @objc func goTakePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {

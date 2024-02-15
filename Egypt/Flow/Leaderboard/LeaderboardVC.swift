@@ -51,12 +51,6 @@ class LeaderboardVC: UIViewController {
             
             }
         }
-    
-//    func sorterScoreLeads() {
-//        leads.sort {
-//            $1.data[0].balance < $0.data[0].balance
-//        }
-//    }
 }
 
 extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
@@ -83,13 +77,9 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
     
     func setupCell(leadCell: LeadCell, user: Datum) {
         
-//        let data = user.data[0] // Извлекаем первый элемент массива data
-
         leadCell.cointslabel.text = "\(user.balance)"
-        leadCell.userNameLabel.text = "USER# \(user.userID)"
-
+        leadCell.userNameLabel.text = user.userName == nil || user.userName == "" ? "USER# \(String(user.userID))" : user.userName
     }
-    
 }
 
 

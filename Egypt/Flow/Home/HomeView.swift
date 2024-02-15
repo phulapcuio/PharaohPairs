@@ -78,6 +78,7 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        adjustFontSizesForScreenSize()
         setUpConstraints()
         
     }
@@ -131,7 +132,22 @@ class HomeView: UIView {
 
         bottomImage.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(24)
-            make.top.equalTo(leadButtons.snp.bottom).offset(74)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-14)
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+        
+        if screenSize.height < smallerScreenHeight {
+            
+            playButtons.snp.makeConstraints { make in
+                make.top.equalTo(topImage.snp.bottom).offset(34)
+                make.centerX.equalToSuperview()
+                make.height.equalTo(48)
+                make.width.equalTo(280)
+            }
         }
     }
 }

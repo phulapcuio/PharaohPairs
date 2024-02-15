@@ -52,7 +52,7 @@ class InfoView: UIView {
 
     private lazy var contentLabel: UILabel = {
         let label = UILabel()
-                label.text = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                label.text = "An exciting adventure in which players go on an exciting journey through the mysterious ancient world of Egypt.\nThe key mechanics of the game is to find matches between ancient inscriptions and modern artifacts. When players find matches, it opens up new avenues for exploration and allows them to get closer to solving puzzles.\nSecrets discovered by players may shed light on the mysteries of Ancient Egypt, such as secret rituals, lost civilizations, or even the location of ancient treasures."
         label.textColor = .white
         label.font = .customFont(font: .montserrat, style: .medium, size: 12)
         label.numberOfLines = 0
@@ -119,12 +119,11 @@ class InfoView: UIView {
         infoScrollView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(24)
             make.top.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-24)
+            make.bottom.equalToSuperview()
         }
         
         infoConteinerView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalToSuperview()
+            make.edges.equalToSuperview()
             make.centerX.equalToSuperview()
         }
         
@@ -144,12 +143,12 @@ class InfoView: UIView {
         }
         
         contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(32)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(12)
             make.left.right.equalToSuperview()
         }
         
         bottomConImage.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-12)
             make.left.right.equalToSuperview()
         }
 

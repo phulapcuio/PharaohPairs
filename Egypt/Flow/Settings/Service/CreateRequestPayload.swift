@@ -10,16 +10,30 @@ struct CreateResponse: Decodable {
 }
 
 struct CreateResponseData: Decodable {
-    let userId: String
-    let balance: String
+    let userId: Int
+    let userName: String?
+    let balance: Int
+    let imageUrl: String
 }
 
 
-struct UpdatePayload: Encodable {
+struct UpdatePayload: Decodable {
     let data: UpdatePayloadData
 }
 
-struct UpdatePayloadData: Encodable {
-    let userId: Int
-    let balance: Int
+struct UpdatePayloadData: Decodable {
+    let userName: String
+    let userId: String
+}
+
+struct UpdatePayloadName: Decodable {
+    let data: UpdatePayloadNameData
+}
+
+struct UpdatePayloadNameData: Decodable {
+    let userId: String
+}
+
+struct UserNameUpdate: Codable {
+    let userName: String
 }

@@ -65,8 +65,8 @@ class LoadingVC: UIViewController {
     private func createUserIfNeeded() {
         if UserMemory.shared.userID == nil {
             postService.createUser { [weak self] createResponse in
-                guard let self = self else { return }
-                UserMemory.shared.userID = Int(createResponse.data.userId) ?? 0
+                guard self != nil else { return }
+                UserMemory.shared.userID = Int(createResponse.data.userId) 
             } errorCompletion: { error in
                 print("Ошибка получени данных с бека")
             }

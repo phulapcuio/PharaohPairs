@@ -23,7 +23,7 @@ class LeaderBoardView: UIView {
         let label = UILabel()
         label.text = "Leaders".uppercased()
         label.textAlignment = .center
-        label.font = .customFont(font: .montserrat, style: .black, size: 24)
+        label.font = .customFont(font: .montserrat, style: .black, size: 40)
         label.textColor = .gray
         label.numberOfLines = 0
         return label
@@ -38,6 +38,12 @@ class LeaderBoardView: UIView {
         return tableView
     }()
     
+    private lazy var bottomImage: UIImageView = {
+        let im = UIImageView()
+        im.image = .bottomCon
+        return im
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -50,7 +56,7 @@ class LeaderBoardView: UIView {
     }
     
     private func setupUI() {
-        [backImage,homeButtons,titleLabel,leaderBoardTableView] .forEach(addSubview(_:))
+        [backImage,homeButtons,titleLabel,leaderBoardTableView,bottomImage] .forEach(addSubview(_:))
     }
     private func setUpConstraints(){
         
@@ -65,14 +71,19 @@ class LeaderBoardView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(homeButtons.snp.bottom).offset(24)
+            make.top.equalTo(homeButtons.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
         }
         
         leaderBoardTableView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom)
             make.left.right.equalToSuperview().inset(24)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-48)
+        }
+        
+        bottomImage.snp.makeConstraints { (make) in
+            make.top.equalTo(leaderBoardTableView.snp.bottom).offset(12)
+            make.left.right.equalToSuperview().inset(24)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-4)
         }
     }
 }

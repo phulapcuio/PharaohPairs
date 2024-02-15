@@ -14,7 +14,7 @@ class PostService {
     private init() {}
     private let baseUrl = "https://go.aviator-club.space/users"
     
-    func updateData(completion: @escaping (Result<CreateResponse, Error>) -> Void) {
+    func updateData(completion: @escaping (Result<UpdatePayload, Error>) -> Void) {
         
         guard let url = URL(string: baseUrl + "/update-balance/\(UserMemory.shared.userID!)/\(UserMemory.shared.scoreCoints)") else {
             completion(.failure(LeadServiceError.unkonwn))
@@ -35,7 +35,7 @@ class PostService {
             } else {
                 do {
                     guard let data else { return }
-                    let model = try JSONDecoder().decode(CreateResponse.self, from: data)
+                    let model = try JSONDecoder().decode(UpdatePayload.self, from: data)
                     completion(.success(model))
                 } catch {
                     completion(.failure(error))
@@ -43,6 +43,51 @@ class PostService {
             }
         }.resume()
     }
+    
+    func updateUserName(userName: String, completion: @escaping (Result<UpdatePayloadName, Error>) -> Void) {
+            
+            guard let userID = UserMemory.shared.userID else {
+                completion(.failure(PostServiceError.unkonwn))
+                return
+            }
+            
+            let urlString = "\(baseUrl)/update-username/\(userID)"
+            guard let url = URL(string: urlString) else {
+                completion(.failure(PostServiceError.unkonwn))
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            guard let token = AuthTokenService.shared.token else { return }
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            let updateData = UserNameUpdate(userName: userName)
+            
+            do {
+                let jsonData = try JSONEncoder().encode(updateData)
+                request.httpBody = jsonData
+            } catch {
+                completion(.failure(error))
+                return
+            }
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    do {
+                        guard let data = data else { return }
+                        let model = try JSONDecoder().decode(UpdatePayloadName.self, from: data)
+                        completion(.success(model))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+            }.resume()
+        }
     
     func createUser(successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
         
@@ -61,7 +106,7 @@ class PostService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if error != nil {
                 DispatchQueue.main.async {
                     errorCompletion(LeadServiceError.noData)
                 }
