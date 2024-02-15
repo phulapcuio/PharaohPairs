@@ -20,7 +20,6 @@ final class PlayVC: UIViewController {
     private var isInteractionEnabled = true
     private var buttons: [UIButton] = []
     private var pairedImages: [UIImage] = []
-    
     private let egyptImagesOne: [String] = ["egypt1", "egypt2" ]
     private let egyptImagesSecond: [String] = ["egypt1", "egypt2", "egypt3", "egypt4" ]
     private let egyptImagesThree: [String] = ["egypt1", "egypt2", "egypt3", "egypt4", "egypt5", "egypt6"]
@@ -48,9 +47,8 @@ final class PlayVC: UIViewController {
         reloadLevels()
     }
     
-    
     private func setupLabel() {
-        contentView.levelLabel.text = "Levels \(scoreLevel)"
+        contentView.levelLabel.text = "Level \(scoreLevel)"
         contentView.levelLabel.font = .customFont(font: .montserrat, style: .black, size: 40)
         contentView.levelLabel.textColor = .gray
         contentView.lifesLabel.text = "\(scoreLifes)"
@@ -62,7 +60,6 @@ final class PlayVC: UIViewController {
         contentView.goldsLabel.text = "\(scoreCoints)"
         contentView.movesLabel.font = .customFont(font: .blackHanSans, style: .regular, size: 16)
         contentView.movesLabel.textColor = .white
-
     }
     
     private func reloadLevels() {
@@ -226,6 +223,7 @@ final class PlayVC: UIViewController {
                 button1.alpha = 0
                 button2.alpha = 0
             }, completion: { _ in
+                self.successHapticFeedback()
                 self.clearSelectedButtons()
             })
         } else {
@@ -237,16 +235,23 @@ final class PlayVC: UIViewController {
                 UIView.transition(with: button2, duration: 0.5, options: .transitionFlipFromRight, animations: {
                     button2.setImage(nil, for: .normal)
                 }, completion: { _ in
+                    self.failureHapticFeedback()
                     self.scoreMoves -= 1
                     self.contentView.movesLabel.text = "\(self.scoreMoves)"
                     self.clearSelectedButtons()
-                    self.FailureHapticFeedback()
                 })
             }
             
         }
     }
-    private func FailureHapticFeedback() {
+    
+    private func successHapticFeedback() {
+        guard UserMemory.shared.isOpen else { return }
+        let failureFeedbackGenerator = UINotificationFeedbackGenerator()
+        failureFeedbackGenerator.notificationOccurred(.success)
+    }
+
+    private func failureHapticFeedback() {
         guard UserMemory.shared.isOpen else { return }
         let failureFeedbackGenerator = UINotificationFeedbackGenerator()
         failureFeedbackGenerator.notificationOccurred(.error)
@@ -256,10 +261,10 @@ final class PlayVC: UIViewController {
         firstSelectedButton = nil
         secondSelectedButton = nil
         self.isInteractionEnabled = true
-        checkWin()
+        checkPlayGamming()
     }
     
-    private func checkWin() {
+    private func checkPlayGamming() {
         var isWin = true
         for button in buttons {
             if button.alpha != 0 {
