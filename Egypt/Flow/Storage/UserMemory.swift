@@ -13,10 +13,10 @@ class UserMemory {
     
     var scoreCoints: Int {
         get {
-            updateCoins()
             return defaults.integer(forKey: "scoreCoints")
         }
         set {
+            updateCoins()
             defaults.set(newValue, forKey: "scoreCoints")
         }
     }

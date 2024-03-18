@@ -30,10 +30,11 @@ class HomeVC: UIViewController {
         contentView.leadButtons.addTarget(self, action: #selector(buttonTappedLeadReleased), for: .touchDown)
     }
     
-    @objc func buttonTappedPlay() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.contentView.playButtons.layer.borderColor = UIColor.customOrange.cgColor
-        }
+    @objc 
+    func buttonTappedPlay() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//            self.contentView.playButtons.layer.borderColor = UIColor.customOrange.cgColor
+//        }
         let playVC = PlayVC()
         navigationController?.pushViewController(playVC, animated: true)
     }

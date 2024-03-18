@@ -51,12 +51,15 @@ final class PlayVC: UIViewController {
         contentView.levelLabel.text = "Level \(scoreLevel)"
         contentView.levelLabel.font = .customFont(font: .montserrat, style: .black, size: 40)
         contentView.levelLabel.textColor = .gray
+        
         contentView.lifesLabel.text = "\(scoreLifes)"
         contentView.lifesLabel.font = .customFont(font: .blackHanSans, style: .regular, size: 16)
         contentView.lifesLabel.textColor = .white
+        
         contentView.movesLabel.text = "\(scoreMoves)"
         contentView.movesLabel.font = .customFont(font: .blackHanSans, style: .regular, size: 16)
         contentView.movesLabel.textColor = .white
+        
         contentView.goldsLabel.text = "\(scoreCoints)"
         contentView.movesLabel.font = .customFont(font: .blackHanSans, style: .regular, size: 16)
         contentView.movesLabel.textColor = .white
