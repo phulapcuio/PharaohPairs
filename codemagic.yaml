@@ -1,13 +1,56 @@
 workflows:
-  ios-app:
-    name: Build iOS App
+  ios-workflow:
+    name: iOS Workflow
     environment:
-      xcode: 15.0 # Указать нужную версию Xcode
+      xcode: 15.0
+    
+      ios_signing:
+        distribution_type: app_store # or: ad_hoc | development | enterprise
+        bundle_identifier: com.phulapcuio.pharaoh # <-- Bundle id
+
+      groups:
+        - DEFAULT
+      vars:
+        BUNDLE_ID: "com.dongo.leprechaun-loyalty" # <-- Bundle id
+        XCODE_WORK: "Egypt.xcodeproj" # <-- Xcode workspace
+        XCODE_SCHEME: "Egypt" # <-- Xcode scheme
+       
     scripts:
-      - name: Build iOS project
+      - name: X
+        script: xcodebuild clean -project "Egypt.xcodeproj" -scheme "Egypt" -configuration Release
+      
+      - name: Delete derived data
+        script: rm -rf ~/Library/Developer/Xcode/DerivedData
+      
+      - name: Set up provisioning profiles settings on Xcode project
+        script: xcode-project use-profiles
+      
+      - name: Build ipa for distribution
         script: |
-          xcodebuild build -project "Egypt.xcodeproj" -scheme "Egypt" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/$XCODE_WORK" \
+            --scheme "$XCODE_SCHEME" \
+            --verbose
+
     artifacts:
+      - ios_distribution.key
+      - ios_distribution.csr
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-      - build/ios/xcarchive/*.xcarchive.zip
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_testflight: true
+        expire_build_submitted_for_review: true
+
+        #beta_groups:
+        #  - test 1
+        #  - test 2
+
+        submit_to_app_store: false
+        #cancel_previous_submissions: true
+        #release_type: MANUAL
