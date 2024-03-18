@@ -65,7 +65,7 @@ final class PlayVC: UIViewController {
     private func reloadLevels() {
         scoreLevel = UserMemory.shared.scoreLevel
         contentView.goldsLabel.text = "\(UserMemory.shared.scoreCoints)"
-        contentView.levelLabel.text = "Levels \(UserMemory.shared.scoreLevel)"
+        contentView.levelLabel.text = "Level \(UserMemory.shared.scoreLevel)"
         generatePairedImages(level: scoreLevel)
         createButtonGrid(inputImages: pairedImages)
     }

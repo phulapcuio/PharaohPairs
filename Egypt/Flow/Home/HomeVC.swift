@@ -24,7 +24,6 @@ class HomeVC: UIViewController {
     private func tappedButtons() {
         contentView.profileButtons.addTarget(self, action: #selector(buttonTappedProfile), for: .touchUpInside)
         contentView.playButtons.addTarget(self, action: #selector(buttonTappedPlay), for: .touchUpInside)
-        contentView.playButtons.addTarget(self, action: #selector(buttonTappedPlayReleased), for: .touchDown)
         contentView.getBonusButtons.addTarget(self, action: #selector(buttonTappedGet), for: .touchUpInside)
         contentView.getBonusButtons.addTarget(self, action: #selector(buttonTappedGetReleased), for: .touchDown)
         contentView.leadButtons.addTarget(self, action: #selector(buttonTappedLead), for: .touchUpInside)
@@ -34,7 +33,7 @@ class HomeVC: UIViewController {
     @objc func buttonTappedPlay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.contentView.playButtons.layer.borderColor = UIColor.customOrange.cgColor
-           }
+        }
         let playVC = PlayVC()
         navigationController?.pushViewController(playVC, animated: true)
     }

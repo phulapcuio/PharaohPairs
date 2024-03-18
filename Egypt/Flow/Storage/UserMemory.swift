@@ -13,6 +13,7 @@ class UserMemory {
     
     var scoreCoints: Int {
         get {
+            updateCoins()
             return defaults.integer(forKey: "scoreCoints")
         }
         set {
@@ -71,6 +72,23 @@ class UserMemory {
         }
         set {
             defaults.set(newValue, forKey: "userID")
+        }
+    }
+    
+    var token: String? {
+        get {
+            return defaults.string(forKey: "token")
+        }
+        set {
+            defaults.set(newValue, forKey: "token")
+        }
+    }
+    
+    func updateCoins() {
+        guard let userID = UserMemory.shared.userID else { return }
+        let coins = UserMemory.shared.scoreCoints
+        UserApi.updateData(payload: UpdateUserPayload(id: userID, name: nil, score: coins)) { _ in
+            
         }
     }
     

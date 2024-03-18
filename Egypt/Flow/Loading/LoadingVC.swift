@@ -8,8 +8,7 @@ import UIKit
 
 class LoadingVC: UIViewController {
     
-    private let authService = AuthTokenService.shared
-    private let postService = PostService.shared
+    private let authService = AuthRequestService.shared
     
     private var contentView: LoadingView {
         view as? LoadingView ?? LoadingView()
@@ -44,7 +43,8 @@ class LoadingVC: UIViewController {
     private func authenticateAndCheckToken() {
         Task {
             do {
-                try await authService.authenticate()
+                let response = try await authService.authenticate()
+                UserMemory.shared.token = response.token
                 checkToken()
                 createUserIfNeeded()
                 presendHome()
@@ -64,11 +64,13 @@ class LoadingVC: UIViewController {
 
     private func createUserIfNeeded() {
         if UserMemory.shared.userID == nil {
-            postService.createUser { [weak self] createResponse in
-                guard self != nil else { return }
-                UserMemory.shared.userID = Int(createResponse.data.userId) 
-            } errorCompletion: { error in
-                print("Ошибка получени данных с бека")
+            UserApi.createUser(payload: CreateUserPayload(name: nil, score: 0)) { result in
+                switch result {
+                case .success(let user):
+                    UserMemory.shared.userID = user.id
+                case .failure(let error):
+                    print("failure: \(error.localizedDescription)")
+                }
             }
         }
     }

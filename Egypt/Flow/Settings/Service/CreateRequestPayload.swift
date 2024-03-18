@@ -5,35 +5,31 @@
 
 import Foundation
 
+struct CreateRequestPayload: Encodable {
+    let name: String?
+    let score: Int
+    func makeBody() -> String
+    {
+        var data = [String]()
+        data.append("score=\(score)")
+        if let name = name {
+            data.append("name=\(name)")
+        }
+        return data.map { String($0) }.joined(separator: "&")
+    }
+}
+
 struct CreateResponse: Decodable {
-    let data: CreateResponseData
+    let name: String?
+    let id: Int
+    let score: Int
+    let imageURL: String?
+    
 }
 
-struct CreateResponseData: Decodable {
-    let userId: Int
-    let userName: String?
-    let balance: Int
-    let imageUrl: String
+struct UpdatePayload: Encodable {
+    
+    let name: String?
+    let score: Int?
 }
 
-
-struct UpdatePayload: Decodable {
-    let data: UpdatePayloadData
-}
-
-struct UpdatePayloadData: Decodable {
-    let userName: String
-    let userId: String
-}
-
-struct UpdatePayloadName: Decodable {
-    let data: UpdatePayloadNameData
-}
-
-struct UpdatePayloadNameData: Decodable {
-    let userId: String
-}
-
-struct UserNameUpdate: Codable {
-    let userName: String
-}

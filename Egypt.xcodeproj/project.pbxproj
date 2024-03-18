@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09F130A72BA88B3400A43B73 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F130A62BA88B3400A43B73 /* UserApiService.swift */; };
 		1814C3B62B7A84010001103E /* LeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3B52B7A84010001103E /* LeadCell.swift */; };
 		1814C3B82B7A841F0001103E /* ModelLead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3B72B7A841F0001103E /* ModelLead.swift */; };
 		1814C3BB2B7A87D80001103E /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814C3BA2B7A87D80001103E /* AuthTokenService.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09F130A62BA88B3400A43B73 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		1814C3B52B7A84010001103E /* LeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadCell.swift; sourceTree = "<group>"; };
 		1814C3B72B7A841F0001103E /* ModelLead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLead.swift; sourceTree = "<group>"; };
 		1814C3BA2B7A87D80001103E /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1814C3BC2B7A87FE0001103E /* LeadService.swift */,
 				1814C3BE2B7A89280001103E /* PostService.swift */,
 				1814C3C22B7A895F0001103E /* CreateRequestPayload.swift */,
+				09F130A62BA88B3400A43B73 /* UserApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				1814C3BF2B7A89280001103E /* PostService.swift in Sources */,
 				188960962B73A2A20001BCB7 /* AppDelegate.swift in Sources */,
 				188960D72B73B9720001BCB7 /* LeaderBoardView.swift in Sources */,
+				09F130A72BA88B3400A43B73 /* UserApiService.swift in Sources */,
 				188960DF2B73B9960001BCB7 /* SetupView.swift in Sources */,
 				1814C3BD2B7A87FE0001103E /* LeadService.swift in Sources */,
 				188960982B73A2A20001BCB7 /* SceneDelegate.swift in Sources */,
@@ -590,6 +594,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Egypt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pharaoh'sPair";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -602,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.Egypt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phulapcuio.pharaoh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -621,6 +626,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Egypt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pharaoh'sPair";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -633,7 +639,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tsarevichD.Egypt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phulapcuio.pharaoh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

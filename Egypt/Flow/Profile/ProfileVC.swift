@@ -7,7 +7,7 @@ import UIKit
 class ProfileVC: UIViewController {
     
     private let imagePicker = UIImagePickerController()
-    private let postService = PostService.shared
+    private let postService = PostRequestService.shared
     
     private var contentView: ProfileView {
         view as? ProfileView ?? ProfileView()
@@ -47,12 +47,13 @@ class ProfileVC: UIViewController {
 
     private func updateName() {
         if UserMemory.shared.userName != nil {
-            PostService.shared.updateUserName(userName: UserMemory.shared.userName!) { result in
+            guard let id = UserMemory.shared.userID else { return }
+            UserApi.updateData(payload: UpdateUserPayload(id: id, name: UserMemory.shared.userName, score: nil)) { result in
                 switch result {
-                case .success(let response):
-                    print("Успешно обновлено:", response)
+                case .success(let data):
+                    print("Result: \(data.score)")
                 case .failure(let error):
-                    print("Ошибка при обновлении имени пользователя:", error)
+                    print("Failuer: \(error.localizedDescription)")
                 }
             }
         }

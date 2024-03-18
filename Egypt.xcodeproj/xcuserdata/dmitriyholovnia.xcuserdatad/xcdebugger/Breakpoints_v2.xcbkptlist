@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7BF43EEA-51BC-43FB-AEE6-0CD88D8BDCC3"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C1A88F0-6128-428E-8235-9E21960FBAB2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Settings/Service/UserApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "createUser(payload:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD06097A-4783-4BF1-9761-07C5CAD15678"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Loading/LoadingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "createUserIfNeeded()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C8D6A27-C613-4692-BB1B-893E2CE3BEAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Loading/LoadingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "authenticateAndCheckToken()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29C44A93-7249-4C9D-A503-CB7898837F2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Loading/LoadingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "createUserIfNeeded()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Loading/LoadingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "createUserIfNeeded()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D - 2404326665895567"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D - 2404326665895567"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D - 2404326665895567"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D - 2f9d5e7c06afc4f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "35DB0FC0-EA1F-448D-B4F1-70363195F79D - 2404326665895504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8CBF8E0-B5A0-4933-B13B-49D1D5411BB2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Settings/Service/UserApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "createUser(payload:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E7BE0A8-B3AD-4C33-9168-EAFDAA9F818B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Settings/Service/AuthTokenService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "authenticate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C83A8A3-2C90-4357-8B02-332E32FF8CE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Settings/Service/AuthTokenService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "authenticate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BBAA618-B277-4EE3-B076-17D46F6C8001"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Egypt/Flow/Loading/LoadingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "createUserIfNeeded()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BBAA618-B277-4EE3-B076-17D46F6C8001 - 2404326665895504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3BBAA618-B277-4EE3-B076-17D46F6C8001 - 2404326665895504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "3BBAA618-B277-4EE3-B076-17D46F6C8001 - 2404326665895504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "3BBAA618-B277-4EE3-B076-17D46F6C8001 - 2404326665895504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Egypt.User, Swift.Error&gt;) -&gt; () in Egypt.LoadingVC.createUserIfNeeded() -&gt; ()"
+                  moduleName = "Egypt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriyholovnia/Documents/Affiliate/iOS/Egypt/Egypt/Flow/Loading/LoadingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

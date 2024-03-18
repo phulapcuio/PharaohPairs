@@ -9,8 +9,7 @@ import UIKit
 
 class LeaderboardVC: UIViewController {
     
-    private var leads = [Datum]()
-    private let getLeadService = LeadService.shared
+    private var leads = [User]()
     private var contentView: LeaderBoardView {
         view as? LeaderBoardView ?? LeaderBoardView()
     }
@@ -42,15 +41,18 @@ class LeaderboardVC: UIViewController {
     }
 
     func loadLeads() {
-        getLeadService.fetchData { [weak self] leads in
-            guard let self = self else { return }
-            self.leads = leads.data
-            self.contentView.leaderBoardTableView.reloadData()
-        } errorCompletion: { [weak self] error in
-            guard self != nil else { return }
-            
+        UserApi.getUsers { result in
+            switch result {
+            case .success(let users):
+                DispatchQueue.main.async { [weak self] in
+                    self?.leads = users.sorted(by: { $0.score > $1.score })
+                    self?.contentView.leaderBoardTableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
             }
         }
+    }
 }
 
 extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
@@ -75,10 +77,10 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
         return leaderBoardCell
     }
     
-    func setupCell(leadCell: LeadCell, user: Datum) {
+    func setupCell(leadCell: LeadCell, user: User) {
         
-        leadCell.cointslabel.text = "\(user.balance)"
-        leadCell.userNameLabel.text = user.userName == nil || user.userName == "" ? "USER# \(String(user.userID))" : user.userName
+        leadCell.cointslabel.text = "\(user.score)"
+        leadCell.userNameLabel.text = user.name == nil || user.name == "" ? "USER# \(String(user.id))" : user.name
     }
 }
 

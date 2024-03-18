@@ -3,119 +3,47 @@
 //  Egypt
 import Foundation
 
-enum PostServiceError: Error {
-    case unkonwn
+enum PostRequestServiceError: Error {
+    case unknown
     case noData
 }
 
-class PostService {
+class PostRequestService {
     
-    static let shared = PostService()
+    static let shared = PostRequestService()
     private init() {}
-    private let baseUrl = "https://go.aviator-club.space/users"
     
-    func updateData(completion: @escaping (Result<UpdatePayload, Error>) -> Void) {
-        
-        guard let url = URL(string: baseUrl + "/update-balance/\(UserMemory.shared.userID!)/\(UserMemory.shared.scoreCoints)") else {
-            completion(.failure(LeadServiceError.unkonwn))
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        guard let token = AuthTokenService.shared.token else { return }
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error {
-                completion(.failure(error))
-            } else {
-                do {
-                    guard let data else { return }
-                    let model = try JSONDecoder().decode(UpdatePayload.self, from: data)
-                    completion(.success(model))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-        }.resume()
-    }
+    private let baseUrl = Settings.url
     
-    func updateUserName(userName: String, completion: @escaping (Result<UpdatePayloadName, Error>) -> Void) {
-            
-            guard let userID = UserMemory.shared.userID else {
-                completion(.failure(PostServiceError.unkonwn))
-                return
-            }
-            
-            let urlString = "\(baseUrl)/update-username/\(userID)"
-            guard let url = URL(string: urlString) else {
-                completion(.failure(PostServiceError.unkonwn))
-                return
-            }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            guard let token = AuthTokenService.shared.token else { return }
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            
-            let updateData = UserNameUpdate(userName: userName)
-            
-            do {
-                let jsonData = try JSONEncoder().encode(updateData)
-                request.httpBody = jsonData
-            } catch {
-                completion(.failure(error))
-                return
-            }
-            
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    do {
-                        guard let data = data else { return }
-                        let model = try JSONDecoder().decode(UpdatePayloadName.self, from: data)
-                        completion(.success(model))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                }
-            }.resume()
-        }
-    
-    func createUser(successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
+    func createUser(payload: CreateRequestPayload, successCompletion: @escaping(CreateResponse) -> Void, errorCompletion: @escaping (Error) -> Void) {
         
-        guard let url = URL(string: baseUrl + "/create-user") else {
+        guard let url = URL(string: baseUrl + "/api/players/") else {
             print("Неверный URL")
             DispatchQueue.main.async {
-                errorCompletion(LeadServiceError.unkonwn)
+                errorCompletion(PostRequestServiceError.unknown)
             }
             return
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        let postString = payload.makeBody()
+        request.httpBody = postString.data(using: .utf8)
         
-        guard let token = AuthTokenService.shared.token else { return }
+        guard let token = AuthRequestService.shared.token else { return }
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
+            if let error = error {
                 DispatchQueue.main.async {
-                    errorCompletion(LeadServiceError.noData)
+                    errorCompletion(PostRequestServiceError.noData)
                 }
                 return
             }
             
             guard let data = data else {
                 DispatchQueue.main.async {
-                    errorCompletion(LeadServiceError.unkonwn)
+                    errorCompletion(PostRequestServiceError.unknown)
                 }
                 return
             }
@@ -138,4 +66,3 @@ class PostService {
         task.resume()
     }
 }
-

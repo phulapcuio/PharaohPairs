@@ -10,7 +10,7 @@ import UIKit
 
 class CongratilationsVC: UIViewController {
     
-    private let postService = PostService.shared
+    private let postService = PostRequestService.shared
     
     private var contentView: CongratilationsView {
         view as? CongratilationsView ?? CongratilationsView()
@@ -42,14 +42,13 @@ class CongratilationsVC: UIViewController {
     }
     
     private func updateScore() {
-        postService.updateData() { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(_):
-                    print("Success")
-                case .failure(let failure):
-                    print("Error - \(failure.localizedDescription)")
-                }
+        guard let id = UserMemory.shared.userID else { return }
+        UserApi.updateData(payload: UpdateUserPayload(id: id, name: UserMemory.shared.userName, score: nil)) { result in
+            switch result {
+            case .success(let data):
+                print("Result: \(data.score)")
+            case .failure(let error):
+                print("Failuer: \(error.localizedDescription)")
             }
         }
     }
