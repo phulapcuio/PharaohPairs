@@ -27,6 +27,8 @@ final class PlayVC: UIViewController {
     private let egyptImagesFour: [String] = ["egypt1", "egypt2", "egypt3", "egypt4", "egypt5", "egypt6", "egypt7", "egypt8" ]
     private let egyptImagesFive: [String] =  ["egypt1", "egypt2", "egypt3", "egypt4", "egypt5", "egypt6", "egypt7", "egypt8",
                                                "egypt9", "egypt10", "egypt11", "egypt12", "egypt13", "egypt14", "egypt15", "egypt16", "egypt17", "egypt18"]
+    private let egyptImagesSix: [String] =  ["egypt1", "egypt2", "egypt3", "egypt4", "egypt5", "egypt6", "egypt7", "egypt8",
+                                               "egypt9", "egypt10", "egypt11", "egypt12", "egypt13", "egypt14", "egypt15", "egypt16", "egypt17", "egypt18"]
     
     private var contentView: PlayView {
         view as? PlayView ?? PlayView()
