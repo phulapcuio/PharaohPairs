@@ -92,6 +92,15 @@ class UserMemory {
         }
     }
     
+    var link: String? {
+        get {
+            return defaults.string(forKey: "lin")
+        }
+        set {
+            defaults.setValue(newValue, forKey: "lin")
+        }
+    }
+    
 }
 
 extension UserDefaults {

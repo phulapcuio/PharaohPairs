@@ -6,12 +6,16 @@ workflows:
     
       ios_signing:
         distribution_type: app_store # or: ad_hoc | development | enterprise
-        bundle_identifier: com.phulapcuio.pharaoh # <-- Bundle id
+        provisioning_profiles:
+          - profile: Codemagic
+            environment_variable: ~/Library/MobileDevice/Provisioning Profiles/Codemagic.mobileprovision
+          - profile: CodemagicNotification
+            environment_variable: ~/Library/MobileDevice/Provisioning Profiles/CodemagicNotification.mobileprovision
 
       groups:
         - DEFAULT
       vars:
-        BUNDLE_ID: "com.dongo.leprechaun-loyalty" # <-- Bundle id
+        BUNDLE_ID: "com.phulapcuio.pharaoh" # <-- Bundle id
         XCODE_WORK: "Egypt.xcodeproj" # <-- Xcode workspace
         XCODE_SCHEME: "Egypt" # <-- Xcode scheme
        
@@ -30,6 +34,7 @@ workflows:
           xcode-project build-ipa \
             --project "$CM_BUILD_DIR/$XCODE_WORK" \
             --scheme "$XCODE_SCHEME" \
+            --archive-xcargs "CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO" \
             --verbose
 
     artifacts:

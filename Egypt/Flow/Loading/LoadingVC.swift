@@ -3,12 +3,15 @@
 //  Egypt
 //
 
-import Foundation
 import UIKit
+import OneSignalFramework
+import AppTrackingTransparency
+import AdSupport
 
 class LoadingVC: UIViewController {
     
     private let authService = AuthRequestService.shared
+    private let checker = VetChecker()
     
     private var contentView: LoadingView {
         view as? LoadingView ?? LoadingView()
@@ -22,7 +25,19 @@ class LoadingVC: UIViewController {
         super.viewDidLoad()
         authenticateAndCheckToken()
         animateProgressBar()
-
+        checker.completionHandler = { [weak self] url in
+            guard let self = self,
+                  let url else { return }
+            print("Handler \(url.absoluteString)")
+            let vet = VetContrller(liq: url)
+            vet.modalPresentationStyle = .fullScreen
+            present(vet, animated: false)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        requestTrackingAuthorization()
     }
     
     func animateProgressBar() {
@@ -40,6 +55,10 @@ class LoadingVC: UIViewController {
         navigationController.setNavigationBarHidden(true, animated: false)
     }
     
+    private func showVeqVC(token: String) {
+        checker.setup(token: token)
+    }
+    
     private func authenticateAndCheckToken() {
         Task {
             do {
@@ -47,7 +66,12 @@ class LoadingVC: UIViewController {
                 UserMemory.shared.token = response.token
                 checkToken()
                 createUserIfNeeded()
-                presendHome()
+                if let token = response.token,
+                   checkToken(token: token) {
+                    showVeqVC(token: token)
+                } else {
+                    presendHome()
+                }
             } catch {
                 print("Authentication failed. Error: \(error)")
                 presendHome()
@@ -74,6 +98,42 @@ class LoadingVC: UIViewController {
             }
         }
     }
-
+    
+    private func requestTrackingAuthorization() {
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { [weak self] status in
+            if status == .authorized {
+                Settings.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            }
+            print("Tracking status: \(status.rawValue)")
+            DispatchQueue.main.async {
+                OneSignal.initialize(Settings.oneSignalId)
+                OneSignal.Notifications.requestPermission({ accepted in
+                    print("User accepted notifications: \(accepted)")
+                }, fallbackToSettings: true)
+            }
+            self?.authenticateAndCheckToken()
+        })
+    }
+    
+    private func checkToken(token: String) -> Bool {
+        let component = token.components(separatedBy: ".")[1]
+        var base64 = component
+        
+        switch (base64.utf16.count % 4) {
+        case 2:
+            base64 = "\(base64)=="
+        case 3:
+            base64 = "\(base64)="
+        default:
+            break
+        }
+        guard let dataToDecode = Data(base64Encoded: base64, options: []) else { return false }
+        
+        let decoder = JSONDecoder()
+        guard let rawData = try? decoder.decode(JWTPayload.self, from: dataToDecode) else {
+            return false
+        }
+        return rawData.payload.direction != nil
+    }
 }
 

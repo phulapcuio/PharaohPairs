@@ -67,7 +67,6 @@ class SetupView: UIView {
         switchView.layer.borderWidth = 2
         switchView.layer.borderColor = UIColor.customOrange.cgColor
         switchView.layer.cornerRadius = 16
-
         return switchView
     }()
     
