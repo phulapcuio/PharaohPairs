@@ -37,7 +37,9 @@ class LoadingVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        requestTrackingAuthorization()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+            self?.requestTrackingAuthorization()
+        }
     }
     
     func animateProgressBar() {
