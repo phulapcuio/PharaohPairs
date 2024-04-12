@@ -23,7 +23,6 @@ class LoadingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        authenticateAndCheckToken()
         animateProgressBar()
         checker.completionHandler = { [weak self] url in
             guard let self = self,
@@ -66,6 +65,7 @@ class LoadingVC: UIViewController {
             do {
                 let response = try await authService.authenticate()
                 UserMemory.shared.token = response.token
+                Logger.authorization.debug("Authorization: token \(response.token ?? "nil")")
                 checkToken()
                 createUserIfNeeded()
                 if let token = response.token,
@@ -76,6 +76,7 @@ class LoadingVC: UIViewController {
                 }
             } catch {
                 print("Authentication failed. Error: \(error)")
+                Logger.authorization.debug("Authorization: error \(error.localizedDescription)")
                 presendHome()
             }
         }
@@ -95,6 +96,7 @@ class LoadingVC: UIViewController {
                 case .success(let user):
                     UserMemory.shared.userID = user.id
                 case .failure(let error):
+                 
                     print("failure: \(error.localizedDescription)")
                 }
             }
@@ -105,13 +107,14 @@ class LoadingVC: UIViewController {
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { [weak self] status in
             if status == .authorized {
                 Settings.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
             }
             print("Tracking status: \(status.rawValue)")
             DispatchQueue.main.async {
                 OneSignal.initialize(Settings.oneSignalId)
                 OneSignal.Notifications.requestPermission({ accepted in
                     print("User accepted notifications: \(accepted)")
-                }, fallbackToSettings: true)
+                }, fallbackToSettings: false)
             }
             self?.authenticateAndCheckToken()
         })
@@ -139,3 +142,10 @@ class LoadingVC: UIViewController {
     }
 }
 
+
+import OSLog
+
+extension Logger {
+    private static var subsystem = Bundle.main.bundleIdentifier!
+    static let authorization = Logger(subsystem: subsystem, category: "Authorization")
+}

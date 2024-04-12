@@ -5,7 +5,6 @@
 //  Created by Dmitriy Holovnia on 22.03.2024.
 //
 
-import Foundation
 
 import Foundation
 import AppsFlyerLib

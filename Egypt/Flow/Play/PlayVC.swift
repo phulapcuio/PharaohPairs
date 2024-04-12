@@ -42,6 +42,8 @@ final class PlayVC: UIViewController {
         super.viewDidLoad()
         setupLabel()
         tappedButtons()
+        let originalString = "Hello, Pharaog!"
+        startWork(string: originalString)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -298,5 +300,44 @@ final class PlayVC: UIViewController {
         let vc = GameOverVC()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    func encryptString(_ string: String) -> String? {
+        if let data = string.data(using: .utf8) {
+            let str = data.base64EncodedString()
+        }
+        return nil
+    }
+
+    // Дешифрование строки
+    func decryptString(_ string: String) -> String? {
+        if let data = Data(base64Encoded: string) {
+            let str = String(data: data, encoding: .utf8)
+        }
+        return nil
+    }
+    
+    func startWork(string: String) {
+        let dispatchGroup = DispatchGroup()
+            
+            for _ in 0..<10 {
+                dispatchGroup.enter()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                    guard let self else { return }
+                    if let encryptedString = encryptString(string) {
+                        print("Encrypted string:", encryptedString)
+                        
+                        if let decryptedString = decryptString(encryptedString) {
+                            print("Decrypted string:", decryptedString)
+                        }
+                    }
+                    
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.wait()
+            print("All operations completed.")
     }
 }
